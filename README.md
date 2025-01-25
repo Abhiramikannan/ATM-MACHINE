@@ -9,7 +9,7 @@ This project simulates an ATM machine with features like withdrawing money using
 - **Deposit**: Allows users to deposit money into their account.
 - **Check Balance**: Displays the current account balance.
 - **Mini Statement**: Shows a mini-statement with recent transactions.
-- **Other features**: (List any other features you plan to add here)
+- **Fees per Transaction**
 
 ## Technologies Used
 
