@@ -1,4 +1,6 @@
 import time
+import random
+import qrcode
 
 # Predefined users with fixed card numbers, PINs, and balances
 users = {
@@ -69,7 +71,6 @@ def mini_statement(card_number):
     else:
         print("No transactions yet.")
 
-
 def change_pin(card_number):
     """Allow the user to change their PIN."""
     print("You can change your PIN now.")
@@ -93,6 +94,23 @@ def change_pin(card_number):
     users[card_number]['pin'] = new_pin
     print("Your PIN has been successfully changed.")
 
+def generate_qr_withdrawal(amount):
+    """Generate QR Code for withdrawal."""
+    data = f"Withdraw Amount: {amount} INR"
+    qr = qrcode.make(data)
+    
+    # Save the QR code as an image
+    qr_image_path = "withdrawal_qr.png"
+    qr.save(qr_image_path)
+    
+    print(f"QR Code for withdrawal of {amount} INR has been generated and saved as {qr_image_path}")
+
+def simulate_qr_withdrawal():
+    """Simulate the QR withdrawal process."""
+    withdrawal_amount = random.choice([1000, 2000, 5000, 10000])  # Random withdrawal amount
+    print(f"Initiating QR Withdrawal of {withdrawal_amount} INR...")
+    generate_qr_withdrawal(withdrawal_amount)
+
 def main():
     """Main function to drive the ATM simulation."""
     card_number = login()
@@ -107,7 +125,8 @@ def main():
         print("3. Withdraw Money")
         print("4. Mini Statement")
         print("5. Change Pin")
-        print("6. Exit")
+        print("6. QR Withdrawal")  # Add QR Withdrawal option
+        print("7. Exit")
         
         choice = input("Choose an option: ")
         
@@ -122,6 +141,8 @@ def main():
         elif choice == '5':
             change_pin(card_number)  # Call the change_pin function
         elif choice == '6':
+            simulate_qr_withdrawal()  # Call the QR Withdrawal feature
+        elif choice == '7':
             print("Thank you for using the ATM. Goodbye!")
             break
         else:
