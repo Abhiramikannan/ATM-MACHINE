@@ -69,6 +69,30 @@ def mini_statement(card_number):
     else:
         print("No transactions yet.")
 
+
+def change_pin(card_number):
+    """Allow the user to change their PIN."""
+    print("You can change your PIN now.")
+    
+    # Prompt the user for the old PIN
+    old_pin = input("Enter your old PIN: ")
+    
+    if users[card_number]['pin'] != old_pin:
+        print("Incorrect old PIN. PIN change failed.")
+        return
+    
+    # Prompt for new PIN
+    new_pin = input("Enter your new PIN (4 digits): ")
+    
+    # Validate the new PIN
+    if len(new_pin) != 4 or not new_pin.isdigit():
+        print("Invalid PIN. Please enter a 4-digit PIN.")
+        return
+    
+    # Update the PIN
+    users[card_number]['pin'] = new_pin
+    print("Your PIN has been successfully changed.")
+
 def main():
     """Main function to drive the ATM simulation."""
     card_number = login()
@@ -82,7 +106,8 @@ def main():
         print("2. Deposit Money")
         print("3. Withdraw Money")
         print("4. Mini Statement")
-        print("5. Exit")
+        print("5. Change Pin")
+        print("6. Exit")
         
         choice = input("Choose an option: ")
         
@@ -95,6 +120,8 @@ def main():
         elif choice == '4':
             mini_statement(card_number)
         elif choice == '5':
+            change_pin(card_number)  # Call the change_pin function
+        elif choice == '6':
             print("Thank you for using the ATM. Goodbye!")
             break
         else:
