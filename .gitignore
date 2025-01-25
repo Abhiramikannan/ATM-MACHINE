@@ -1,0 +1,29 @@
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+env/
+
+# IDE/editor settings (example for VSCode, PyCharm, etc.)
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Database files (e.g., SQLite database)
+*.db
+
+# Sensitive or user-specific files (e.g., environment variables)
+*.env
+secrets.txt
+
+# macOS specific files
+.DS_Store
+
+# Windows specific files
+Thumbs.db
