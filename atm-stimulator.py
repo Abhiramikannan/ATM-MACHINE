@@ -93,6 +93,18 @@ def change_pin(card_number):
     users[card_number]['pin'] = new_pin
     print("Your PIN has been successfully changed.")
 
+    # Function to show the last 'n' transactions of the user
+def show_transaction_history(card_number, n=5):
+    """Display the last n transactions of the user's account."""
+    print(f"\nLast {n} Transactions:")
+    transactions = users[card_number]['transactions'][-n:  # Get the last 'n' transactions
+    if transactions:
+        for transaction in transactions:
+            print(transaction)
+    else:
+        print("No transactions available.")
+
+
 def main():
     """Main function to drive the ATM simulation."""
     card_number = login()
@@ -107,7 +119,8 @@ def main():
         print("3. Withdraw Money")
         print("4. Mini Statement")
         print("5. Change Pin")
-        print("6. Exit")
+        print ("6.Transaction history")
+        print("7. Exit")
         
         choice = input("Choose an option: ")
         
