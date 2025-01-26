@@ -11,7 +11,8 @@ This project simulates an ATM machine with features like withdrawing money using
 - **Mini Statement**: Shows a mini-statement with recent transactions.
 - **Fees per Transaction**
 - Transaction history
-- there was some bugs so i fixed that bug
+- test feature-created a bug
+- bugfixxx-there was some bugs so i fixed that bug
 - added ui features :Colorful text (using termcolor for better user interaction).
 Improved transaction history formatting.
 
