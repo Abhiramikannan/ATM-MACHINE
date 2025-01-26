@@ -10,6 +10,10 @@ This project simulates an ATM machine with features like withdrawing money using
 - **Check Balance**: Displays the current account balance.
 - **Mini Statement**: Shows a mini-statement with recent transactions.
 - **Fees per Transaction**
+- Transaction history
+- there was some bugs so i fixed that bug
+- added ui features :Colorful text (using termcolor for better user interaction).
+Improved transaction history formatting.
 
 ## Technologies Used
 
@@ -21,3 +25,6 @@ This project simulates an ATM machine with features like withdrawing money using
 1. Clone this repository:
    ```bash
    git clone https://github.com/yourusername/atm-machine.git
+
+2.pip install termcolor pygame
+
