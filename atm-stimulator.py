@@ -20,8 +20,11 @@ def print_welcome_message():
 
 def play_success_sound():
     """Play a success sound when a transaction is successful"""
-    success_sound = pygame.mixer.Sound("success.wav")  # Add your own sound file here
-    success_sound.play()
+    try:
+        success_sound = pygame.mixer.Sound("success.wav")  # Add your own sound file here
+        success_sound.play()
+    except FileNotFoundError:
+        print("Sound file 'success.wav' not found. Skipping sound.")
 
 def login():
     """Simulate login with card number and PIN."""
